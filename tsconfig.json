@@ -3,5 +3,11 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "strict": true,
-  }
+  },
+  "include": [
+    "src",
+  ],
+  "files": [
+    "src/styles/styled.d.ts"
+  ]
 }

@@ -1,28 +1,25 @@
+import { useCallback, useEffect, useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { DefaultTheme, ThemeProvider } from "styled-components";
+import usePersistedState from "./src/utils/usePersistedState";
 
-import { MainText } from "./App.styles";
+import { Router } from "./src/routes";
+import darkTheme from "./src/styles/themes/dark";
+import lightTheme from "./src/styles/themes/light";
 
 export default function App() {
-  console.log(9821, "whats this?");
+  const [theme, setTheme] = usePersistedState<DefaultTheme>("theme", darkTheme);
+
+  const toggleTheme = useCallback(() => {
+    setTheme((theme) => (theme.title === "light" ? darkTheme : lightTheme));
+  }, []);
+
+  useEffect(() => {}, []);
+
   return (
-    <View style={styles.container}>
-      <MainText style={styles.text}>
-        Open up App.tsx to start working on your app!
-      </MainText>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider theme={{ ...theme, toggleTheme }}>
+      <StatusBar style={theme.statusBarStyle} />
+      <Router />
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#202020",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    color: "#fff",
-  },
-});
