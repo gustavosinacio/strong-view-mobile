@@ -1,4 +1,5 @@
 import { DefaultTheme } from "styled-components";
+import extraConfigs from "./extraConfigs";
 import sizing from "./sizing";
 
 const DarkTheme: DefaultTheme = {
@@ -12,9 +13,8 @@ const DarkTheme: DefaultTheme = {
     },
   },
   statusBarStyle: "dark",
-  sizing: {
-    ...sizing,
-  },
+  ...sizing,
+  ...extraConfigs,
 };
 
 export default DarkTheme;

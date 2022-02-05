@@ -1,3 +1,4 @@
+import { StatusBarStyle } from "expo-status-bar";
 import "styled-components";
 
 declare module "styled-components" {
@@ -20,7 +21,7 @@ declare module "styled-components" {
       };
     };
     title: string;
-    statusBarStyle: string;
-    toggleTheme?(): void;
+    statusBarStyle: StatusBarStyle;
+    toggleTheme(themeTitle: string): void;
   }
 }
