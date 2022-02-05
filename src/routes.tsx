@@ -4,8 +4,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useContext } from "react";
 import { ThemeContext, ThemeProvider } from "styled-components";
 
-import { Home } from "./Home/Home";
-import { AddNote } from "./AddNote/AddNote";
+import { Home } from "./pages/Home/Home";
+import { AddNote } from "./pages/AddNote/AddNote";
 
 export type RootStackParamList = {
   Home: {

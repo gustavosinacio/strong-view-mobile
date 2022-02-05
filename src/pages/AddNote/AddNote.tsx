@@ -1,6 +1,6 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../routes";
-import { Text } from "../Text/Text.styles";
+import { RootStackParamList } from "../../routes";
+import { Text } from "../../Text/Text.styles";
 import { Container } from "./AddNote.styles";
 
 type AddNoteScreenNavigationProp = NativeStackScreenProps<

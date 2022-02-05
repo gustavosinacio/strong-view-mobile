@@ -11,7 +11,7 @@ function usePersistedState<T>(key: string, initialState: T): Response<T> {
       const storedItem = await AsyncStorage.getItem(key);
 
       if (storedItem) {
-        console.log(98212, "returns stored");
+        console.log(98212, `return stored: ${storedItem}`);
         return setState(JSON.parse(storedItem));
       } else {
         console.log(98213, "sets new");

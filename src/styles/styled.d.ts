@@ -22,6 +22,6 @@ declare module "styled-components" {
     };
     title: string;
     statusBarStyle: StatusBarStyle;
-    toggleTheme(themeTitle: string): void;
+    toggleTheme(): void;
   }
 }

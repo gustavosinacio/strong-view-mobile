@@ -3,8 +3,8 @@ import { ThemeContext } from "styled-components";
 import { Button } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-import { RootStackParamList } from "../routes";
-import { Text } from "../Text/Text.styles";
+import { RootStackParamList } from "../../routes";
+import { Text } from "../../Text/Text.styles";
 import { Container } from "./Home.styles";
 
 type HomeScreenNavigationProp = NativeStackScreenProps<
