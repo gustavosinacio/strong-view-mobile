@@ -1,18 +1,12 @@
-import { useCallback, useContext } from "react";
-import { ThemeContext } from "styled-components";
-import { Button } from "react-native";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
+import { Button } from 'react-native';
 
-import { RootStackParamList } from "../../routes";
-import { Text } from "../../Text/Text.styles";
-import { Container } from "./Home.styles";
+import { HomeProps } from '../../routes';
+import { Text } from '../../Text/Text.styles';
+import { Container } from './Home.styles';
 
-type HomeScreenNavigationProp = NativeStackScreenProps<
-  RootStackParamList,
-  "Home"
->;
-
-export const Home = ({ navigation }: HomeScreenNavigationProp) => {
+export function Home({ navigation }: HomeProps) {
   const { toggleTheme } = useContext(ThemeContext);
 
   return (
@@ -24,9 +18,9 @@ export const Home = ({ navigation }: HomeScreenNavigationProp) => {
       <Text size="extraLarge">extra large text</Text>
       <Button
         title="Go to add notes"
-        onPress={() => navigation.navigate("AddNote")}
+        onPress={() => navigation.navigate('AddNote')}
       />
       <Button title="toggle" onPress={toggleTheme} />
     </Container>
   );
-};
+}

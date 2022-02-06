@@ -1,11 +1,14 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from '@react-navigation/native';
+import {
+  createNativeStackNavigator,
+  NativeStackScreenProps,
+} from '@react-navigation/native-stack';
 
-import { useContext } from "react";
-import { ThemeContext, ThemeProvider } from "styled-components";
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
-import { Home } from "./pages/Home/Home";
-import { AddNote } from "./pages/AddNote/AddNote";
+import { Home } from './pages/Home/Home';
+import { AddNote } from './pages/AddNote/AddNote';
 
 export type RootStackParamList = {
   Home: {
@@ -13,10 +16,11 @@ export type RootStackParamList = {
   };
   AddNote: undefined;
 };
+export type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
-export const Router = () => {
+export function Router() {
   const {
     colors: { text, background },
   } = useContext(ThemeContext);
@@ -39,4 +43,4 @@ export const Router = () => {
       </RootStack.Navigator>
     </NavigationContainer>
   );
-};
+}
